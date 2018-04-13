@@ -1,0 +1,13 @@
+img {
+    width: 200px;
+    height: auto;
+}
+
+#buttons {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.hide {
+    display: none;
+}
