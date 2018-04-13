@@ -1,36 +1,51 @@
 const allMyButtons = document.getElementsByClassName('buttons');
 
 const showCard = (e) => {
-  console.log(e);
+
   const animalType = e.target;
-  animalType.classList.add('bright-color');
 
+  const dogs = document.getElementsByClassName('dog');
+  const cats = document.getElementsByClassName('cat');
+  const dino = document.getElementsByClassName('dino');
+
+  if (animalType.classList.contains('dog-btn')) {
+    cats.classList.add('hide');
+    dinos.classList.add('hide');
+  } else if (animalType.classList.contains('dino-btn')) {
+    dogs.classList.add('hide');
+    cats.classList.add('hide');
+  } else if (animalType.classList.contains('cat-btn')) {
+    dogs.classList.add('hide');
+    dinos.classList.add('hide');
+  }
 };
 
-const hideCard = (e) => {
-  const dinoType = e.target;
-  dinoType.classList.remove('bright-color');
-};
+// const hideCard = (e) => {
+//   const dinoType = e.target;
+//   dinoType.classList.remove('bright-color');
+// };
 
 const addEvents = () => {
   for (let i = 0; i < allMyButtons.length; i++) {
 
-    if (allMyButtons[i].contains('dog-btn')) {
+    allMyButtons[i].addEventListener('click', showCard);
+    //   allMyButtons[i].addEventListener('click', hideCard);
+    // if (allMyButtons[i].parentNode.contains('dog-btn')) {
 
-      allMyButtons[i].addEventListener('click', showCard);
-      allMyButtons[i].addEventListener('click', hideCard);
+    //   allMyButtons[i].addEventListener('click', showCard);
+    //   allMyButtons[i].addEventListener('click', hideCard);
 
-    } else if (allMyButtons[i].contains('dog-btn')) {
+    // } else if (allMyButtons[i].contains('dino-btn')) {
 
-      allMyButtons[i].addEventListener('click', showCard);
-      allMyButtons[i].addEventListener('click', hideCard);
+    //   allMyButtons[i].addEventListener('click', showCard);
+    //   allMyButtons[i].addEventListener('click', hideCard);
 
-    } else {
+    // } else {
 
-      allMyButtons[i].addEventListener('click', showCard);
-      allMyButtons[i].addEventListener('click', hideCard);
+    //   allMyButtons[i].addEventListener('click', showCard);
+    //   allMyButtons[i].addEventListener('click', hideCard);
 
-    }
+    // }
   }
 };
 
