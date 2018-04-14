@@ -6,7 +6,7 @@ const showCard = (e) => {
 
   const dogs = document.getElementsByClassName('dog');
   const cats = document.getElementsByClassName('cat');
-  const dino = document.getElementsByClassName('dino');
+  const dinos = document.getElementsByClassName('dino');
 
   if (animalType.classList.contains('dog-btn')) {
     cats.classList.add('hide');
@@ -22,7 +22,7 @@ const showCard = (e) => {
 
 // const hideCard = (e) => {
 //   const dinoType = e.target;
-//   dinoType.classList.remove('bright-color');
+//   dinoType.classList.remove('hide');
 // };
 
 const addEvents = () => {
