@@ -9,25 +9,31 @@ const showCard = (e) => {
   const dinos = document.getElementsByClassName('dino');
 
   if (animalType.classList.contains('dog-btn')) {
+
     for (let x = 0; x < cats.length; x++) {
-      cats.classList.add('hide');
+      cats[x].classList.add('hide');
     }
     for (let y = 0; y < dinos.length; y++) {
-      dinos.classList.add('hide');
+      dinos[y].classList.add('hide');
     }
+
   } else if (animalType.classList.contains('dino-btn')) {
+
     for (let x = 0; x < cats.length; x++) {
-      cats.classList.add('hide');
+      cats[x].classList.add('hide');
     }
     for (let y = 0; y < dinos.length; y++) {
-      dogs.classList.add('hide');
+      dogs[y].classList.add('hide');
     }
+
   } else if (animalType.classList.contains('cat-btn')) {
+
     for (let x = 0; x < cats.length; x++) {
-      dogs.classList.add('hide');
+      dogs[x].classList.add('hide');
     }
     for (let y = 0; y < dinos.length; y++) {
-      dinos.classList.add('hide');
+      dinos[y].classList.add('hide');
+
     }
   }
 };
