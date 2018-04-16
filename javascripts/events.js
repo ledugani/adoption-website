@@ -1,3 +1,5 @@
+let counter = 1;
+
 const allMyButtons = document.getElementsByClassName('buttons');
 
 const showCard = (e) => {
@@ -33,37 +35,28 @@ const showCard = (e) => {
     }
     for (let y = 0; y < dinos.length; y++) {
       dinos[y].classList.add('hide');
-
     }
   }
+
+  counter++;
 };
 
-// const hideCard = (e) => {
-//   const dinoType = e.target;
-//   dinoType.classList.remove('hide');
-// };
+const hideCard = (e) => {
+  const hiddenAnimalType = e.target;
+
+  if (hiddenAnimalType.classList.contains('hide')) {
+    hiddenAnimalType.classList.remove('hide');
+  }
+
+};
 
 const addEvents = () => {
   for (let i = 0; i < allMyButtons.length; i++) {
 
     allMyButtons[i].addEventListener('click', showCard);
-    //   allMyButtons[i].addEventListener('click', hideCard);
-    // if (allMyButtons[i].parentNode.contains('dog-btn')) {
-
-    //   allMyButtons[i].addEventListener('click', showCard);
-    //   allMyButtons[i].addEventListener('click', hideCard);
-
-    // } else if (allMyButtons[i].contains('dino-btn')) {
-
-    //   allMyButtons[i].addEventListener('click', showCard);
-    //   allMyButtons[i].addEventListener('click', hideCard);
-
-    // } else {
-
-    //   allMyButtons[i].addEventListener('click', showCard);
-    //   allMyButtons[i].addEventListener('click', hideCard);
-
-    // }
+    if (counter === 2) {
+      allMyButtons[i].addEventListener('click', hideCard);
+    }
   }
 };
 
