@@ -16,11 +16,19 @@ const showCard = (e) => {
       dinos.classList.add('hide');
     }
   } else if (animalType.classList.contains('dino-btn')) {
-    // dogs.classList.add('hide');
-    // cats.classList.add('hide');
+    for (let x = 0; x < cats.length; x++) {
+      cats.classList.add('hide');
+    }
+    for (let y = 0; y < dinos.length; y++) {
+      dogs.classList.add('hide');
+    }
   } else if (animalType.classList.contains('cat-btn')) {
-    // dogs.classList.add('hide');
-    // dinos.classList.add('hide');
+    for (let x = 0; x < cats.length; x++) {
+      dogs.classList.add('hide');
+    }
+    for (let y = 0; y < dinos.length; y++) {
+      dinos.classList.add('hide');
+    }
   }
 };
 
