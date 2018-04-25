@@ -41,25 +41,30 @@ const showCard = (e) => {
   counter++;
 };
 
-if (counter === 2) {
-  console.log('hi');
+const hideCard = (e) => {
+  const hiddenAnimalType = e.target;
+
+  if (hiddenAnimalType.classList.contains('hide')) {
+    hiddenAnimalType.classList.remove('hide');
+  }
+
 };
-
-// const hideCard = (e) => {
-//   const hiddenAnimalType = e.target;
-
-//   if (hiddenAnimalType.classList.contains('hide')) {
-//     hiddenAnimalType.classList.remove('hide');
-//   }
-
-// };
 
 const addEvents = () => {
   for (let i = 0; i < allMyButtons.length; i++) {
     allMyButtons[i].addEventListener('click', showCard);
-    // if (counter === 2) {
-    //   allMyButtons[i].addEventListener('click', hideCard);
-    // }
+    if (counter === 2) {
+      allMyButtons[i].addEventListener('click', hideCard);
+    }
+    if (allMyButtons[i].classList.contains('clear-btn')) {
+      const clearBtn = allMyButtons[i];
+      if (counter === 1) {
+        document.getElementById('clear-btn').disabled = true;
+      } else if (counter > 1) {
+        document.getElementById('clear-btn').disabled = false;
+      }
+      clearBtn.addEventListener('click', hideCard);
+    };
   }
 };
 
