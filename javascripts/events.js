@@ -24,13 +24,13 @@ const showCard = (e) => {
     for (let x = 0; x < cats.length; x++) {
       cats[x].classList.add('hide');
     }
-    for (let y = 0; y < dinos.length; y++) {
+    for (let y = 0; y < dogs.length; y++) {
       dogs[y].classList.add('hide');
     }
 
   } else if (animalType.classList.contains('cat-btn')) {
 
-    for (let x = 0; x < cats.length; x++) {
+    for (let x = 0; x < dogs.length; x++) {
       dogs[x].classList.add('hide');
     }
     for (let y = 0; y < dinos.length; y++) {
@@ -41,22 +41,25 @@ const showCard = (e) => {
   counter++;
 };
 
-const hideCard = (e) => {
-  const hiddenAnimalType = e.target;
-
-  if (hiddenAnimalType.classList.contains('hide')) {
-    hiddenAnimalType.classList.remove('hide');
-  }
-
+if (counter === 2) {
+  console.log('hi');
 };
+
+// const hideCard = (e) => {
+//   const hiddenAnimalType = e.target;
+
+//   if (hiddenAnimalType.classList.contains('hide')) {
+//     hiddenAnimalType.classList.remove('hide');
+//   }
+
+// };
 
 const addEvents = () => {
   for (let i = 0; i < allMyButtons.length; i++) {
-
     allMyButtons[i].addEventListener('click', showCard);
-    if (counter === 2) {
-      allMyButtons[i].addEventListener('click', hideCard);
-    }
+    // if (counter === 2) {
+    //   allMyButtons[i].addEventListener('click', hideCard);
+    // }
   }
 };
 
