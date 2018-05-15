@@ -1,4 +1,4 @@
-let counter = 1;
+// let counter = 1;
 
 const allMyButtons = document.getElementsByClassName('buttons');
 
@@ -19,6 +19,8 @@ const showCard = (e) => {
       dinos[y].classList.add('hide');
     }
 
+    hideCard('dog-btn');
+
   } else if (animalType.classList.contains('dino-btn')) {
 
     for (let x = 0; x < cats.length; x++) {
@@ -37,34 +39,20 @@ const showCard = (e) => {
       dinos[y].classList.add('hide');
     }
   }
-
-  counter++;
 };
 
-const hideCard = (e) => {
-  const hiddenAnimalType = e.target;
-
-  if (hiddenAnimalType.classList.contains('hide')) {
-    hiddenAnimalType.classList.remove('hide');
-  }
-
+const hideCard = (animalButt) => {
+  // const hiddenAnimalType = e.target.parentNode.parentNode.parentNode.children[1].childNodes;
+  const animalButton = document.getElementById(`${animalButt}`);
+  animalButton.addEventListener('click', (animal) => {
+    const newAnimal = document.getElementsByClassName('hide');
+    console.log(newAnimal);
+  });
 };
 
 const addEvents = () => {
   for (let i = 0; i < allMyButtons.length; i++) {
     allMyButtons[i].addEventListener('click', showCard);
-    if (counter === 2) {
-      allMyButtons[i].addEventListener('click', hideCard);
-    }
-    if (allMyButtons[i].classList.contains('clear-btn')) {
-      const clearBtn = allMyButtons[i];
-      if (counter === 1) {
-        document.getElementById('clear-btn').disabled = true;
-      } else if (counter > 1) {
-        document.getElementById('clear-btn').disabled = false;
-      }
-      clearBtn.addEventListener('click', hideCard);
-    };
   }
 };
 
