@@ -30,6 +30,8 @@ const showCard = (e) => {
       dogs[y].classList.add('hide');
     }
 
+    hideCard('dino-btn');
+
   } else if (animalType.classList.contains('cat-btn')) {
 
     for (let x = 0; x < dogs.length; x++) {
@@ -38,6 +40,9 @@ const showCard = (e) => {
     for (let y = 0; y < dinos.length; y++) {
       dinos[y].classList.add('hide');
     }
+
+    hideCard('cat-btn');
+
   }
 };
 
@@ -46,7 +51,17 @@ const hideCard = (animalButt) => {
   const animalButton = document.getElementById(`${animalButt}`);
   animalButton.addEventListener('click', (animal) => {
     const newAnimal = document.getElementsByClassName('hide');
-    console.log(newAnimal);
+    while (newAnimal[0]) {
+      newAnimal[0].classList.remove('hide');
+    }
+  });
+
+  const clearButton = document.getElementById(`clear-btn`);
+  clearButton.addEventListener('click', (animal) => {
+    const animals = document.getElementsByClassName('hide');
+    while (animals[0]) {
+      animals[0].classList.remove('hide');
+    }
   });
 };
 
